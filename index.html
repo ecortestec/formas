@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+    <meta charset="UTF-8">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Gabarito&family=Onest:wght@300;600&display=swap" rel="stylesheet">
+    </head>
+<body>
+
+    <div class="container">
+<div class="left">
+<h1>HTML Forms</h1>
+<p>El elemento <strong>&lt;form&gt;</strong> es un contenedor para diferentes tipos de elementos de entrada, como: campos de texto, botones, checkboxes, botones de opción, etc.</p>
+
+<p>El elemento HTML <strong>&lt;input&gt;</strong> es el elemento de formulario más utilizado.
+<br>Un elemento <strong>&lt;input&gt;</strong> se puede mostrar de muchas maneras, según el atributo de type.
+<br>Para marcar un campo como necesario, agrega el atributo <strong>required</strong> en la etiqueta de input.</p>
+
+<p>El radio button o botones de opción permiten al usuario seleccionar UNA sola opción de una lista y se define como <strong>&lt;input type="radio"&gt;</strong></p>
+
+<p>Los checkboxes o casillas de verificación permiten al usuario seleccionar CERO o VARIAS opciones de un número limitado de opciones.
+<br><strong>&lt;input type="checkbox"&gt;</strong> define una casilla de verificación.</p>
+
+<p>El elemento <strong>&lt;select&gt;</strong> define una lista desplegable, es decir, un dropdown.
+<br>Para definir una opción preseleccionada, agregue el atributo <strong>selected</strong> a la opción.
+
+<p>El elemento <strong>&lt;textarea&gt;</strong> define un campo de entrada de varias líneas de texto.
+<br>El atributo de <strong>rows</strong> especifica el número visible de líneas en un área de texto.
+<br>El atributo <strong>cols</strong> especifica el ancho visible de un área de texto.
+<br>También puedes definir el tamaño del área de texto usando CSS con las propiedades <strong>width</strong> y <strong>height</strong></p>
+
+<!-- <p>El elemento <strong>&lt;output&gt;</strong> representa el resultado de un cálculo (como uno realizado por un script).</p>
+ -->
+<p>El <strong>&lt;input type="date"&gt;</strong> se utiliza para campos de entrada que deben contener una fecha.</p>
+
+<p>Para agregar un campo de correo electrónico se utiliza <strong>&lt;input type="email"&gt;</strong></p>
+
+<p>Existe un botón específico para enviar los datos en una forma. 
+    <br><strong>&lt;input type="submit"&gt;</strong> define un botón para enviar los datos a un controlador de formulario.
+    <br>Utiliza el input de tipo <strong>&lt;input type="reset"&gt;</strong> para restablecer las respuestas del formulario.</p>
+
+<p>Para más información, visita: <a href="https://www.w3schools.com/html/html_forms.asp">W3 Schools: HTML Forms</a></p>
+
+</div><!-- left -->
+
+<!-- <br><br> -->
+
+<div class="right">
+<h2>Ejemplo de Form</h2>
+<form action="action_page.php" method="post" oninput="x.value=parseInt(a.value)+parseInt(b.value)">
+    <h3>Campo de texto</h3>
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" id="nombre" name="nombre" placeholder="Nombre Apellidos"><br>
+
+    <h3>Radio button</h3>
+    <label for="radiobtn">Selecciona 1 opción:</label><br>
+    <input type="radio" id="opciona" name="radiobtn" value="A">
+    <label for="radiobtn">Opción A</label><br>
+    <input type="radio" id="opcionb" name="radiobtn" value="B">
+    <label for="radiobtn">Opción B</label><br>
+    <input type="radio" id="opcionc" name="radiobtn" value="C">
+    <label for="radiobtn">Opción C</label>
+
+    <h3>Checkboxes</h3>
+    <label for="checkboxes">Selecciona varias opciones:</label><br>
+    <input type="checkbox" id="opciond" name="checkboxes[]" value="D">
+    <label for="checkboxes">Opción D</label><br>
+    <input type="checkbox" id="opcione" name="checkboxes[]" value="E">
+    <label for="checkboxes">Opción E</label><br>
+    <input type="checkbox" id="opcionf" name="checkboxes[]" value="F">
+    <label for="checkboxes">Opción F</label>
+
+    <h3>Dropdown</h3>
+    <label for="dropdown">Elige una opción:</label><br>
+    <select id="dropdown" name="dropdown">
+        <option value="G">Opción G</option>
+        <option value="H">Opción H</option>
+        <option value="I">Opción I</option>
+        <option value="J">Opción J</option>
+    </select>
+
+    <h3>Área de texto</h3>
+    <label for="areatxt">Área de texto utilizando rows y cols:</label><br>
+    <textarea name="mensaje" rows="3" cols="20" style="resize: none;">
+        </textarea><br><br>
+    <label for="areatxt2">Área de texto utilizando style:</label><br>
+        <textarea name="mensaje2" style="width:300px; height:60px; resize: none;">
+            </textarea>
+
+    <h3>Fecha</h3>
+    <label for="fecha">Elige una fecha:</label><br>
+    <input type="date" id="fecha" name="fecha"><br><br>
+    <label for="tiempo">Elige una hora:</label><br>
+    <input type="time" id="tiempo" name="tiempo" min="09:00" max="20:00"><span></span><br>
+    <label for="fyh">Elige una fecha y hora:</label><br>
+    <input type="datetime-local" id="fyh" name="fyh">
+            
+    <h3>Correo electrónico y Teléfono</h3>
+    <label for="correo">Escribe tu correo:</label><br>
+    <input type="email" id="correo" name="correo" placeholder="correo@mail.com"><br><br>
+    <label for="cel">Escribe tu celular:</label><br>
+    <input type="tel" id="cel" name="cel" min="10" placeholder="10 dígitos">
+
+ <!--    <h3>Output</h3>
+        Mín. 0 <input type="range" id="a" name="a" value="50"> 100 Max. 
+        + 
+        <input type="number" id="b" name="b" value="50" min="0" max="100">
+        =
+        <output name="x" for="a b"></output> -->
+
+    <h3>Botón</h3>
+    <input type="reset" value="Borrar">
+    <input type="submit" value="Enviar">
+    
+</form>
+    </div><!-- right -->
+        </div><!-- container -->
+
+</body>
+</html>
